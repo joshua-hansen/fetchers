@@ -1,0 +1,8 @@
+[package]
+name = "fetchers"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+indoc = "2.0.6"
+sysinfo = "0.34.2"
