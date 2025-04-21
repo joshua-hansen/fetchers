@@ -19,7 +19,7 @@ impl fmt::Display for Software {
 }
 
 impl Software {
-    pub fn new() -> Self {
+    pub async fn new() -> Self {
         let os = System::long_os_version().unwrap_or_else(|| {
             eprintln!("Error: Unable to find OS version");
             String::from("N/A")

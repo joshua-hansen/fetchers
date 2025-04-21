@@ -28,7 +28,7 @@ impl fmt::Display for Hardware {
 }
 
 impl Hardware {
-    pub fn new(system_information: &System) -> Result<Hardware, &'static str> {
+    pub async fn new(system_information: &System) -> Result<Hardware, &'static str> {
         let cpu = match system_information.cpus().first() {
             Some(cpu) => cpu.brand().to_string(),
             None => return Err("No processor found"),
