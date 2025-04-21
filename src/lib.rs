@@ -3,13 +3,14 @@ mod software;
 mod system_information;
 
 use std::error::Error;
+use std::process;
 
 
 pub fn run() -> Result<(), Box<dyn Error>> {
     // Gather System Info
     let system_information = system_information::SystemInformation::new().unwrap_or_else(|err| {
-        eprintln!("Error: {}", err);
-        std::process::exit(1);
+        eprintln!("Application Error: {}", err);
+        process::exit(1);
     });
 
     // Print System Info
